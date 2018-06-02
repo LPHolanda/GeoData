@@ -14,6 +14,9 @@ import { IntroPage } from "../pages/intro/intro";
 import { PaisPageModule } from "../pages/pais/pais.module";
 import { DestinoPageModule } from "../pages/destino/destino.module";
 
+import { HttpModule } from "@angular/http";
+import { PaisProvider } from '../providers/pais/pais';
+
 @NgModule({ 
   declarations: [
     MyApp,
@@ -27,7 +30,8 @@ import { DestinoPageModule } from "../pages/destino/destino.module";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     DestinoPageModule,
-    PaisPageModule
+    PaisPageModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +45,8 @@ import { DestinoPageModule } from "../pages/destino/destino.module";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PaisProvider
   ]
 })
 export class AppModule {}

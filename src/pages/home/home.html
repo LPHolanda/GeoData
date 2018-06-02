@@ -8,11 +8,15 @@
   <h3>Selecione o continente</h3>
   <ion-item>
     <ion-select name="continentes" class="form-control" [(ngModel)]="continente">
-      <ion-option *ngFor="let continente of continentes" >{{continente.nome}}</ion-option>
+      <ion-option [value]="Africa">Africa</ion-option>
+      <ion-option [value]="Americas">Americas</ion-option>
+      <ion-option [value]="Europe">Europe</ion-option>
+      <ion-option [value]="Asia">Asia</ion-option>
+      <ion-option [value]="Oceania">Oceania</ion-option>
     </ion-select>
   </ion-item>
   <ion-item>
-    <button ion-button (click)="irParaPaises(continente)">Buscar</button>
+    <button ion-button (click)="irParaPaises()">Buscar</button>
   </ion-item>
 
 </ion-content>

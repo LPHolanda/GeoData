@@ -1,24 +1,21 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Pais } from "../../model/pais";
-
-/**
- * Generated class for the DestinoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { PaisProvider } from "../../providers/pais/pais";
 
 @IonicPage()
 @Component({
   selector: 'page-destino',
   templateUrl: 'destino.html',
+  providers: [
+    PaisProvider
+  ]
 })
 export class DestinoPage {
 
   public pais: Pais;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public paisProvider: PaisProvider) {
     this.pais = this.navParams.get("paisSelecionado");
   }
 

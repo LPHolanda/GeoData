@@ -16,6 +16,12 @@ import { DestinoPageModule } from "../pages/destino/destino.module";
 
 import { HttpModule } from "@angular/http";
 import { PaisProvider } from '../providers/pais/pais';
+import { SQLite } from '@ionic-native/sqlite'
+import { DatabaseProvider } from '../providers/database/database';
+import { DbPaisProvider } from '../providers/db-pais/db-pais';
+import { AdicionaPaisPageModule } from "../pages/adiciona-pais/adiciona-pais.module";
+import { AtualizaPaisPageModule } from "../pages/atualiza-pais/atualiza-pais.module";
+import { ExibePaisPageModule } from "../pages/exibe-pais/exibe-pais.module";
 
 @NgModule({ 
   declarations: [
@@ -31,7 +37,10 @@ import { PaisProvider } from '../providers/pais/pais';
     IonicModule.forRoot(MyApp),
     DestinoPageModule,
     PaisPageModule,
-    HttpModule
+    HttpModule,
+    AdicionaPaisPageModule,
+    AtualizaPaisPageModule,
+    ExibePaisPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +55,10 @@ import { PaisProvider } from '../providers/pais/pais';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PaisProvider
+    PaisProvider,
+    DatabaseProvider,
+    DbPaisProvider,
+    SQLite
   ]
 })
 export class AppModule {}
